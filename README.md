@@ -54,6 +54,28 @@ Trained **Random_Forest** (200 trees) and **XGBoost** (200 estimators) for **mul
 ### Visualization: 
 Compared confusion matrices for both models and plotted top **20 feature importances** (elevation, hillshade, distances most important).
 - **Random-Forest** achieved the best **accuracy** but is **slower**; **XGBoost** is more **efficient** for real-time use.
-Lasso severely underfit due to over-penalization.
+- Lasso severely underfit due to over-penalization.
+- Scatter plots confirmed Linear Regression predictions align closely with actual values.
 
-Scatter plots confirmed Linear Regression predictions align closely with actual values.
+## Task 4: Loan Approval Prediction
+### Dataset:
+- 4269 records, 
+- 13 features (income, assets, credit score, dependents, etc.), 
+- target = loan_status (Approved / Rejected).
+### Preprocessing:
+- Removed duplicates
+- Encoded categorical variables (education, self_employed)
+- Scaled numeric features using StandardScaler.
+### Imbalanced Data Models:
+**Class Imbalance:**
+Approved = 2656, Rejected = 1613.
+- **Decision Tree**: Accuracy = 97%, high precision & recall for both classes.
+- **Logistic Regression**: Accuracy = 91%, lower recall for Rejected loans.
+### Balanced Data Models:
+**Balanced Data (SMOTE applied):** 
+Classes equalized (2120 each).
+- **Decision Tree**: Accuracy = 97%, high precision & recall.
+- **Logistic Regression**: Accuracy = 91%, improved recall for Rejected loans.
+### Comparison:
+- **Decision Tree** outperforms Logistic Regression on both **imbalanced** and **balanced** datasets.
+- **Decision Tre**e is the **best choice** for loan approval prediction, maintaining **accuracy** and class balance.
